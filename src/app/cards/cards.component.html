@@ -1,0 +1,214 @@
+<h2>Card Status Tracking</h2>
+<div id="search-component">
+  <div id="searchContainer">
+		<table id="searchTable" align="center" border="0">
+			<tr>
+				<td id="searchText">	
+					<input #searchBox id="search-box" />
+				</td>
+				<td id="searchIcon" width="20" align="left" style="padding: 10px;">
+					<img width="20" height="20" src="assets/img/search.png" (click)="search(searchBox.value)">
+				</td>
+			</tr>
+		</table>
+  </div>
+  
+  <div *ngIf="currentCardStatus">
+  <div id="receiptNumContainer" >
+		<table id="receiptNumTable">
+			<tr>
+				<td id="receiptNum" title="Return to Summary" >{{ currentCardStatus.id}}</td>						
+			</tr>
+		</table>
+  </div>
+  <div id="resultsContainer" >
+		<div id="resultsCard">
+			<table border="0" height="100%">
+				<tr height="60">
+					<td colspan="2">
+						<table id="progressTable" cellspacing="0" cellpadding="0" border="0">
+							<tr *ngIf='currentCardStatus.appName === "C3"'>
+								<td class="progressStep mainAreaGreen mainAreaFirst" >Requested</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey" >Rec by ESB</td>
+								<td class="arrowHeaderBlue">
+									<div class="arrow greyArrow"></div>
+								</td>
+								<td class="progressStep mainAreaBlue" id="currentStatus" >Rec by EPMS</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow blueArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey" >Rec by NPS</td>
+								<td class="arrowHeaderBlue">
+									<div class="arrow greyArrow"></div>
+								</td>
+								<td class="progressStep mainAreaBlue" >Printed</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow blueArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey" >Mailed</td>
+								<td class="arrowHeaderLast">
+									<div class="arrow greyArrow"></div>
+								</td>
+							</tr>
+							<tr *ngIf='currentCardStatus.appName === "ESB"'>
+								<td class="progressStep mainAreaGreen mainAreaFirst" >Requested</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen" >Rec by ESB</td>
+								<td class="arrowHeaderBlue">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaBlue" id="currentStatus" >Rec by EPMS</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow blueArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey"  >Rec by NPS</td>
+								<td class="arrowHeaderBlue">
+									<div class="arrow greyArrow"></div>
+								</td>
+								<td class="progressStep mainAreaBlue"  >Printed</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow blueArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey"  >Mailed</td>
+								<td class="arrowHeaderLast">
+									<div class="arrow greyArrow"></div>
+								</td>
+							</tr>
+							<tr *ngIf='currentCardStatus.appName === "EPMS"'>
+								<td class="progressStep mainAreaGreen mainAreaFirst" >Requested</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Rec by ESB</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen" id="currentStatus" >Rec by EPMS</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey"  >Rec by NPS</td>
+								<td class="arrowHeaderBlue">
+									<div class="arrow greyArrow"></div>
+								</td>
+								<td class="progressStep mainAreaBlue"  >Printed</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow blueArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey"  >Mailed</td>
+								<td class="arrowHeaderLast">
+									<div class="arrow greyArrow"></div>
+								</td>
+							</tr>
+							<tr *ngIf='currentCardStatus.appName === "NPS"'>
+								<td class="progressStep mainAreaGreen mainAreaFirst" >Requested</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Rec by ESB</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen" id="currentStatus" >Rec by EPMS</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Rec by NPS</td>
+								<td class="arrowHeaderBlue">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaBlue"  >Printed</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow blueArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey"  >Mailed</td>
+								<td class="arrowHeaderLast">
+									<div class="arrow greyArrow"></div>
+								</td>
+							</tr>
+							<tr *ngIf='currentCardStatus.appName === "CPSTR"'>
+								<td class="progressStep mainAreaGreen mainAreaFirst" >Requested</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Rec by ESB</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen" id="currentStatus" >Rec by EPMS</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Rec by NPS</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Printed</td>
+								<td class="arrowHeaderGrey">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGrey"  >Mailed</td>
+								<td class="arrowHeaderLast">
+									<div class="arrow greyArrow"></div>
+								</td>
+							</tr>
+							<tr *ngIf='currentCardStatus.appName === "SMI"'>
+								<td class="progressStep mainAreaGreen mainAreaFirst" >Requested</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Rec by ESB</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen" id="currentStatus" >Rec by EPMS</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Rec by NPS</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Printed</td>
+								<td class="arrowHeaderGreen">
+									<div class="arrow greenArrow"></div>
+								</td>
+								<td class="progressStep mainAreaGreen"  >Mailed</td>
+								<td class="arrowHeaderLast">
+									<div class="arrow greenArrow"></div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td width="20%" valign="top">
+						<img width="200" height="220" src="assets/img/faceImage.png" />
+						<p>
+						John Smith<br/>
+						A123456789<br/>
+						12 Main St. Washington DC<br/>
+						E-mail: @yahoo.command<br/>
+						</p>
+					</td>
+					<td width="80%" align="left" valign="top">
+						<div id="historyContainer" *ngIf="cardHistory">
+							<span id="history">Card History</span>
+							<ul>
+							  <li *ngFor="let card of cardHistory">
+								{{card.appName}}: {{card.arrivalStatus}} at {{card.arrivalTimestamp}}; {{card.leaveStatus}} at {{card.leaveTimestamp}}
+							  </li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+  </div>
+  </div>
+</div>

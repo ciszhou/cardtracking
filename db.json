@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Read SitePoint article",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Clean inbox",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Make restaurant reservation",
+      "complete": false
+    }
+  ],
+
+   "cards": [
+      { "id": "1", "application": "", "status": "Sent", "timestamp": "03/30/2018 10:10:30", "error": "" },
+      { "id": "2", "application": "", "status": "Received", "timestamp": "03/30/2018 11:10:30", "error": "" },
+      { "id": "3", "application": "", "status": "Received", "timestamp": "03/30/2018 12:10:30", "error": "" },
+      { "id": "4", "application": "", "status": "Received", "timestamp": "04/01/2018 10:10:30", "error": "" },
+      { "id": "5", "application": "", "status": "Printed", "timestamp": "04/01/2018 14:10:30", "error": "" },
+      { "id": "6", "application": "", "status": "", "timestamp": "", "error": "" }
+    ]
+}
